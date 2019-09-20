@@ -6,13 +6,13 @@ RUN apt-get update \
     && apt-get install -y curl \
     && apt-get clean
  
-ENV KIBANA_VERSION=6.6.2 \
+ENV KIBANA_VERSION=6.2.2 \
     KIBANA_HOME=/kibana \
     PATH=${KIBANA_HOME}/bin:$PATH
  
 WORKDIR ${KIBANA_HOME}
  
-RUN  curl -fL https://artifacts.elastic.co/downloads/kibana/kibana-$KIBANA_VERSION-linux-x86_64.tar.gz \
+RUN  curl -fL https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz \
     | tar --strip-components=1 -zx
  
 COPY run.sh /

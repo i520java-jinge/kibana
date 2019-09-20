@@ -1,6 +1,6 @@
 #!/bin/sh
 export PORT=${PORT:-5601}
-export ES_URL=${ES_URL:-"http://localhost:9200"}
+export ES_URL=${ELASTICSEARCH_URL:-"http://localhost:9200"}
  
 echo "server.host: \"0\""
 echo "server.host: \"0\"" >> ${KIBANA_HOME}/config/kibana.yml
